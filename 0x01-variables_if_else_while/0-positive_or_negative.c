@@ -2,9 +2,10 @@
 #include <stdlib.h>
 #include <time.h>
 
-/** main - entry point prints is numner is negative, positive or zero 
-*Description - positive anything is better than negative nothing 
-*Returns: zero if successful 
+/**
+ * main - entry point
+ * Description - positive anything is better than negative nothing
+ * Return: 0
  */
 int main(void)
 {
