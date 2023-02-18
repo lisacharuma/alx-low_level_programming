@@ -4,7 +4,7 @@
  * main - Entry point
  * Description - Alphabet soup
  * Return: 0
- * */
+ */
 int main(void)
 {
 	char c;
