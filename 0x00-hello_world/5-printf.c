@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+/**
+ * main - entry point
+ * Description - print text using printf
+ * Return: 0
+ */
+
+int main(void)
+{
+	printf("with the proper grammar, but the outcome is a piece of art,\n");
+	return (0);
+}
