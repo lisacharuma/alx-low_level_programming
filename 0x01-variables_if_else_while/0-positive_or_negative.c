@@ -3,7 +3,7 @@
 #include <time.h>
 
 /* main - entry point prints is numner is negative, positive or zero */
-
+/*Description - positive anything is better than negative nothing */
 /* always returns zero if successful */
 int main(void)
 {
@@ -22,7 +22,7 @@ int main(void)
 	}
 	else
 	{
-		printf("%d is positive\n", n);
+		printf("%d is positive\n", n)
 	}
 	return (0);
 }
