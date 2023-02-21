@@ -14,8 +14,8 @@ int main(void)
 
 	for (i = 0; x[i]; i++)
 	{
-		putchar(x[i])
+		putchar(x[i]);
 	}
-	putchar('\n);
+	putchar('\n');
 	return (0);
 }
