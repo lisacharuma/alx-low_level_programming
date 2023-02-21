@@ -2,9 +2,9 @@
 #include "main.h"
 
 /**
- * main - check the code
+ * print_alphabet_x10 - only function
  * Description - this function prints the alphabet 10 times
- * return : 0
+ * return : void
  */
 
 void print_alphabet_x10(void)
@@ -18,7 +18,6 @@ void print_alphabet_x10(void)
 		{
 			_putchar(ch);
 		}
-
+		_putchar('\n');
 	}
-	_putchar('\n');
 }
