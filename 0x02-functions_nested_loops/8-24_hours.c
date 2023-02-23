@@ -1,27 +1,25 @@
 #include "main.h"
 
 /**
- * jack_bauer - entry point
- * Description: prints minutes
+ * jack_bauer - Entry Point
+ * Description - Prints every minute of the day of Jack Bauer
  * Return: void
  */
 
 void jack_bauer(void)
 {
-	int min = 0;
-	int hr = 0;
+	int hour, minute;
 
-	for (min = 0; min <= 59; min++)
+	for (hour = 0; hour < 24; hour++)
 	{
-		_putchar('%02d:%02d', hr, min);
-		if (min == 59)
+		for (minute = 0; minute < 60; minute++)
 		{
-			hr += 1;
-		min = 0;
-
-		if (hr == 24)
-			break;
-		 _putchar('%02d:%02d', hr, min);
+			_putchar(hour / 10 + '0');
+			_putchar(hour % 10 + '0');
+			_putchar(':');
+			_putchar(minute / 10 + '0');
+			_putchar(minute % 10 + '0');
+			_putchar('\n');
 		}
 	}
 }
