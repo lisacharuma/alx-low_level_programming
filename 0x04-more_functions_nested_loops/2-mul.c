@@ -3,7 +3,8 @@
 /**
  * mul - entry point
  * Description: Multiplies two numbers
- * @a, b: numbers to be multiplied
+ * @a: numbers to be multiplied
+ * @b: parameter to be multiplied
  * Return: answer
  */
 
