@@ -1,29 +1,25 @@
 #include "main.h"
 
 /**
- * _strncpy - new method
- * Description: copies a string
+ * *_strncpy - Entry point
+ * Description: Copies a string
  * @dest: char
  * @src: char
- * @n: int
+ * @n: Integer
  * Return: string
  */
 
 char *_strncpy(char *dest, char *src, int n)
 {
 	int i;
-	int j;
 
-	j = 0;
-
-	for (i = 0; i < n && scr[i] != '\0'; i++)
+	for (i = 0; i < n && src[i] != '\0'; i++)
 	{
 		dest[i] = src[i];
 	}
-	while (dest[j] != '\0')
+	for (; i < n; i++)
 	{
-		j++;
+		dest[i] = '\0';
 	}
-	dest[j + 1] = '\0';
 	return (dest);
 }

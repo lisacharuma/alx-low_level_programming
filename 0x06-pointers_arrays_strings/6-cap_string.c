@@ -1,38 +1,47 @@
 #include "main.h"
 
 /**
- * cap_string - method in use
- * Description: capitalizes all words of a string
- * @str: the string to be capitalized
- * Return: a pointer to the changed string
+ * *cap_string - Entry point
+ * Description: Capitalizes all words of a string
+ * @str: Character
+ * Return: char
  */
 
 char *cap_string(char *str)
 {
-	int index = 0;
+	int i = 0;
+	int cap = 1; /* Capitalize the first letter */
 
-	while (str[index])
+	while (str[i] != '\0')
 	{
-		while (!(str[index] >= 'a' && str[index] <= 'z'))
+		switch (str[i])
 		{
-			index++;
-		if (str[index - 1] == ' ' ||
-		str[index - 1] == '\t' ||
-		str[index - 1] == '\n' ||
-		str[index - 1] == ',' ||
-		str[index - 1] == ';' ||
-		str[index - 1] == '.' ||
-		str[index - 1] == '!' ||
-		str[index - 1] == '?' ||
-		str[index - 1] == '"' ||
-		str[index - 1] == '(' ||
-		str[index - 1] == ')' ||
-		str[index - 1] == '{' ||
-		str[index - 1] == '}' ||
-		index == 0){
-			str[index] == 32;
+			case ' ':
+			case '\t':
+			case '\n':
+			case ',':
+			case ';':
+			case '.':
+			case '!':
+			case '?':
+			case '\"':
+			case '(':
+			case ')':
+			case '{':
+			case '}':
+				cap = 1; /* Set flag to capitalize next letter */
+				break;
+			default:
+				if (cap)
+				{
+					/* capitalize current letter */
+					str[i] = (str[i] >= 'a' && str[i] <= 'z') ? str[i] - 'a' + 'A' : str[i];
+					cap = 0; /* Clear flag*/
+				}
+				break;
 		}
-		index++;
+		i++;
 	}
 	return (str);
 }
+
