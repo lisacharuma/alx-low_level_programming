@@ -1,0 +1,1 @@
+This is the Readme file for the new project 0x06-pointers_arrays_strings. This project is all about pointers, working with pointers in functions and arrays. In this project, unless otherwise stated, I won't be using the standard library, but a header file that I will create then _putchar() as the method to output text.
