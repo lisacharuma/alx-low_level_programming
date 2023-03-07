@@ -11,18 +11,22 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	for (; haystack != '\0'; haystack++)
+	/* return haystack if given string is empty*/
+	if (*needle == '\0')
+		return (haystack);
+	while (*haystack)
 	{
-		char *one = haystack;
-		char *two = needle;
+		char *h = haystack;
+		char *n = needle;
 
-		while (*one == *two && *two != '\0')
+		while (*n != '\0' && *h == *n)
 		{
-			one++;
-			two++;
+			h++;
+			n++;
 		}
-		if (*two == '\0')
+		if (*n == '\0')
 			return (haystack);
+		haystack++
 	}
-	return (NULL);
+	return ('\0');
 }
