@@ -42,5 +42,5 @@ int check_match(char *s1, char *s2)
 
 int wildcmp(char *s1, char *s2)
 {
-	return(check_match(s1, s2));
+	return (check_match(s1, s2));
 }
