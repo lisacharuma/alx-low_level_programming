@@ -1,0 +1,1 @@
+This is the readme file for the project Static Libraries. in this project, I am going to create astatic library with .o files that will be produced by compiling but not linking their respective .c files.
