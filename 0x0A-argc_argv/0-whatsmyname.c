@@ -8,9 +8,9 @@
  * Return: 0
  */
 
-int main(int argc__attribute__((unused)), char *argv[])
+int main(int argc, char *argv[])
 {
-	printf("%s\n", *argv);
+	printf("%s\n", argv[argc * 0]);
 
 	return (0);
 }
