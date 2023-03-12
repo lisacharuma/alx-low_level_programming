@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 
 	if (argc == 1)
 	{
-		printf("\n"); /* no arg passed*/
+		printf("%d\n", 0); /* no arg passed*/
 		return (0);
 	}
 	for (i = 1; i < argc; i++) /* as long as there r mo than 1 args*/
