@@ -17,7 +17,11 @@ list_t *add_node(list_t **head, const char *str)
 	 * point its node ptr to the 4lowing node
 	 * make HEAD point to new node
 	 */
+	int count = 0; /*counter variable*/
 	list_t *new_node = malloc(sizeof(list_t));
+
+	if (new_node == NULL)
+		return (NULL);
 
 	/*Adding values, string first*/
 	new_node->str = strdup(str); /*duplicate str & add 2 str value*/
@@ -28,7 +32,6 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}
 	/*Now count str chars 2 get len*/
-	int count = 0; /*counter variable*/
 
 	while (str[count])
 	{
