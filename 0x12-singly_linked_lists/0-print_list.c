@@ -10,7 +10,7 @@
 
 size_t print_list(const list_t *h) /* takes pointer to a node as arg*/
 {
-	int counter = 0; /*counts nodes*/
+	size_t counter = 0; /*counts nodes*/
 
 	while (h != NULL) /*as long as h isnt list terminator*/
 	{/*check node strings*/
