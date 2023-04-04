@@ -13,6 +13,8 @@ void free_listint2(listint_t **head)
 	 * Freeing starts at the current pointed node
 	 * in this case that node is the head
 	 * Return immediately if pointed node is null
+	 * Before freeing the head, make it point to new node
+	 * Free head then make new_node the head
 	 */
 	listint_t *new_node;
 
@@ -20,9 +22,9 @@ void free_listint2(listint_t **head)
 		return;
 	while (head != NULL)
 	{
-		new_node = *head;
-		*head = (*head)->next;
-		free(new_node);
+		new_node = (*head)->next;
+		free(*head);
+		*head = new_node;
 	}
-	*head = NULL;
+	head = NULL;
 }
