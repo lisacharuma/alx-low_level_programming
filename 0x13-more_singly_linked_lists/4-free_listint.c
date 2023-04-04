@@ -9,12 +9,12 @@
 
 void free_listint(listint_t *head)
 {
-	listint_t *this_node = head;
+	listint_t *this_node = head; /*starts pointing to the same address as head*/
 
-	while (head != NULL)
+	while (head != NULL) /*as long as the node isnt list terminator*/
 	{
 		this_node = head;
-		head = head->next;
-		free(this_node);
+		head = head->next; /*move to the next node*/
+		free(this_node); /*free the current node*/
 	}
 }
