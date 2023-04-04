@@ -18,7 +18,7 @@ void free_listint2(listint_t **head)
 	 */
 	listint_t *new_node;
 
-	if (head == NULL)
+	if (head == NULL || *head == NULL) /*Accessing null ptr cozs seg fault*/
 		return;
 	while (head != NULL)
 	{
@@ -26,5 +26,5 @@ void free_listint2(listint_t **head)
 		free(*head);
 		*head = new_node;
 	}
-	head = NULL;
+	/*head = NULL;*/
 }
