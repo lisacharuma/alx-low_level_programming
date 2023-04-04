@@ -16,15 +16,18 @@ void free_listint2(listint_t **head)
 	 * Before freeing the head, make it point to new node
 	 * Free head then make new_node the head
 	 */
-	listint_t *new_node;
+	listint_t *new_node, *next;
 
-	if (head == NULL || *head == NULL) /*Accessing null ptr cozs seg fault*/
+	if (head == NULL) /*Accessing null ptr cozs seg fault*/
 		return;
-	while (head != NULL)
+
+	new_node = *head;
+
+	while (new_node != NULL)
 	{
-		new_node = (*head)->next;
-		free(*head);
-		*head = new_node;
+		next = new_node->next;
+		free(new_node);
+		new_node = next;
 	}
-	/*head = NULL;*/
+	*head = NULL;
 }
