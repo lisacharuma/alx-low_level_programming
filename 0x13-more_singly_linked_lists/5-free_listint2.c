@@ -21,13 +21,13 @@ void free_listint2(listint_t **head)
 	if (head == NULL) /*Accessing null ptr cozs seg fault*/
 		return;
 
-	new_node = *head;
+	new_node = *head;/*keeps track of next node*/
 
-	while (new_node != NULL)
+	while (new_node != NULL)/*as long as be4 list terminator*/
 	{
-		next = new_node->next;
-		free(new_node);
-		new_node = next;
+		next = new_node->next;/*setting new_node to the next node*/
+		free(new_node);/*free current node memory*/
+		new_node = next;/*point 2 next node*/
 	}
-	*head = NULL;
+	*head = NULL; /*head is NULL & pointing 2 a valid location*/
 }
