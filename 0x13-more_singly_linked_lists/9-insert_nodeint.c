@@ -21,20 +21,32 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	new_node->next = NULL;
 	/* the above is the node to b added*/
 
-	current_node = *head; /*starts @ e beginning*/
-
-	if (current_node == NULL) /*empty list*/
+	if (idx == 0) /*insert at the beginning*/
 	{
-		free(new_node);
-		return (NULL);
+		new_node->next = *head; /*poibt 2 e previous head*/
+		*head = new_node; /*new node is the head*/
 	}
-	while (count < idx - 1 && current_node != NULL)
+	else
 	{
-		current_node = current_node->next;
-		count++;
-	}
-	new_node->next = current_node->next;
-	current_node->next = new_node;
+		current_node = *head; /*starts @ e beginning*/
 
+		if (current_node == NULL) /*empty list*/
+		{
+			free(new_node);
+			return (NULL);
+		}
+		while (count < idx - 1 && current_node != NULL)
+		{
+			current_node = current_node->next;
+			count++;
+		}
+		if (count != idx - 1) /*idx out of range*/
+		{
+			free(new_node);
+			return (NULL);
+		new_node->next = current_node->next;
+		current_node->next = new_node;
+		}
+	}
 	return (*head);
 }
