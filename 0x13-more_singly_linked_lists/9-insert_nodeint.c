@@ -25,7 +25,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	{
 		new_node->next = *head; /*poibt 2 e previous head*/
 		*head = new_node; /*new node is the head*/
-		return (*head);
+		return (new_node);
 	}
 	else
 	{
