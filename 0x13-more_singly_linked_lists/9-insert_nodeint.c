@@ -31,18 +31,12 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	{
 		current_node = *head; /*starts @ e beginning*/
 
-		/*if (current_node == NULL || current_node->next == NULL) empty lis*/
-		/*{*/
-			/*free(new_node);*/
-		/*	return (NULL);*/
-		/*}*/
 		while (count < idx - 1 && current_node->next != NULL)
 		{
 			if (current_node == NULL || current_node->next == NULL) /*empty list*/
-                	{
-                        	/*free(new_node);*/
-                        	return (NULL);
-               		 }
+			{
+				return (NULL);
+			}
 			current_node = current_node->next;
 			count++;
 		}
