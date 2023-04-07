@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "lists.h"
 
+void print_line(void) __attribute__ ((constructor));
+
 /**
  * print_line - new function
  * Description: prints a given line
