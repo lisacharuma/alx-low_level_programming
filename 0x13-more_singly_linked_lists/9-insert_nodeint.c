@@ -46,11 +46,11 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			current_node = current_node->next;
 			count++;
 		}
-		/*if (count < idx - 1) idx out of range*/
-		/*{*/
-		/*	free(new_node);*/
-		/*	return (NULL);*/
-		/*}*/
+		if (count < idx - 1) idx out of range
+		{
+			free(new_node);
+			return (NULL);
+		}
 
 		new_node->next = current_node->next;
 		current_node->next = new_node;
