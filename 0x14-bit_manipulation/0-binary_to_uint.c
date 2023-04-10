@@ -20,6 +20,8 @@ unsigned int binary_to_uint(const char *b)
 	 * Multiply each digit by its assigned power of 2
 	 * Add up the results and return sum
 	 */
+	if (!b)
+		return (0);
 	for (i = binary_len - 1; i >= 0; i--)
 	{
 		if (b[i] == '0')
