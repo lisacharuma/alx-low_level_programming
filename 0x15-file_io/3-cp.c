@@ -63,10 +63,26 @@ int copy_file(char *file_from_path, char *file_to_path)
 		return (98);
 	}
 	free(buffer);
-	if (close(file_from) == -1 || close(file_to) == -1)
+	close_fd(file_from);
+	close_fd(file_to);
+	return (0);
+}
+
+/**
+ * close_fd - function name
+ * Description: closes file descriptor
+ * @fd: file descriptor
+ * Return: void
+ */
+
+void close_fd(int fd)
+{
+	int res;
+
+	res = close(fd);
+	if (res == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd\n");
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		return (100);
 	}
-	return (0);
 }
