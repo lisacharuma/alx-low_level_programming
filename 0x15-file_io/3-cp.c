@@ -36,7 +36,7 @@ int copy_file(char *file_from_path, char *file_to_path)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from_path);
 		return (98);
 	}
-	file_to = open(file_to_path, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	file_to = open(file_to_path, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (file_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to_path);
@@ -46,7 +46,7 @@ int copy_file(char *file_from_path, char *file_to_path)
 	if (buffer == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't allocate memory\n");
-		return (100);
+		return (101);
 	}
 	while ((bytes_read = read(file_from, buffer, 1024)) > 0)
 	{
