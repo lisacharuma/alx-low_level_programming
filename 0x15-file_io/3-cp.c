@@ -85,5 +85,5 @@ int close_filedescriptor(int fd)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		return (100);
 	}
-	return (0);
+	return (res);
 }
